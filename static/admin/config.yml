@@ -19,6 +19,40 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: 'src/pages/home/index.md'
+        label: 'Home'
+        name: 'home'
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - label: 'Page Sections'
+            name: 'sections'
+            widget: 'list'
+            types:
+              - label: 'Two Column Section'
+                name: 'two_column_md'
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string }
+                  - {label: Column 1, name: column_one, widget: markdown}
+                  - {label: Column 2, name: column_two, widget: markdown}
+              - label: 'One Column Section'
+                name: 'one_column_md'
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Column 1, name: column_one, widget: markdown}
+              - label: 'Accordion Section'
+                name: accordion
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: 'Accordion Items'
+                    name: 'accordion_items'
+                    widget: list
+                    fields: [{label: 'Label', name: label, widget: string}, {label: 'Content', name: content, widget: markdown}]
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

@@ -1,5 +1,6 @@
 import CMS from 'netlify-cms-app'
 
+import HomePagePreview from './preview-templates/HomePagePreview';
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
@@ -21,8 +22,8 @@ if (process.env.NODE_ENV === 'development') {
     "branch": "master"
   }
 }
-CMS.init({config})
-
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.init({config});
+CMS.registerPreviewTemplate('home', HomePagePreview);
+CMS.registerPreviewTemplate('about', AboutPagePreview);
+CMS.registerPreviewTemplate('products', ProductPagePreview);
+CMS.registerPreviewTemplate('blog', BlogPostPreview);
