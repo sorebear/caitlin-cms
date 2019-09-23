@@ -15,6 +15,52 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  
+  - name: "page"
+    label: "Page"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page"}
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - label: 'Page Sections'
+        name: 'sections'
+        widget: 'list'
+        types:
+          - label: 'Two Column Section'
+            name: 'two_column_md'
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string }
+              - {label: Column 1, name: column_one, widget: markdown}
+              - {label: Column 2, name: column_two, widget: markdown}
+          - label: 'One Column Section'
+            name: 'one_column_md'
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string, optional: true }
+              - {label: Sub Title, name: sub_title, widget: string, optional: true }
+              - {label: Background Image, name: bg_image, widget: image, optional: true }
+              - {label: Column 1, name: column_one, widget: markdown}
+          - label: 'Accordion Section'
+            name: accordion
+            widget: object
+            fields:
+              - {label: Title, name: title, required: false, widget: string}
+              - label: 'Accordion Items'
+                name: 'accordion_items'
+                widget: list
+                fields: [{label: 'Label', name: label, widget: string}, {label: 'Content', name: content, widget: markdown}]
+          - label: 'Testimonials Section'
+            name: testimonial_section
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - label: 'Testimonials'
+                name: 'testimonials'
+                widget: list
+                fields: [{label: Image, name: image, widget: image}, {label: Name, name: name, widget: string}, {label: About, name: about, widget: string}, {label: Quotation, name: quotation, widget: text}]
 
   - name: "pages"
     label: "Pages"

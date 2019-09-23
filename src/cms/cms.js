@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   }
 }
 CMS.init({config});
-CMS.registerPreviewTemplate('home', HomePagePreview);
+CMS.registerBackend('page', HomePagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('products', ProductPagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);

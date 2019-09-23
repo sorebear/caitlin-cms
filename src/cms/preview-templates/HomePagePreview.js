@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { PageTemplate } from '../../templates/home-page'
+import { PageTemplate } from '../../templates/page'
 
 const HomePagePreview = ({ entry, widgetFor }) => {
   const entrySections = entry.getIn(['data', 'sections'])
